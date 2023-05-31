@@ -38,7 +38,7 @@ docker push mariochan15/springboot-avec-mongodb:v1
 docker run -p 8090:8081 --name springboot-avec-mongodb-container-un --link mongodb-container-un:mongo -d mariochan15/springboot-avec-mongodb:v1
 ```
 
-8. 
+8. Voir les logs à "l'intérieur" du container SpringBoot
 
 ```
 docker logs springboot-avec-mongodb-container-un
