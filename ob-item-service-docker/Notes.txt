@@ -1,0 +1,27 @@
+
+
+Commandes Docker
+
+1. Login au Docker Hub -> docker login
+2. Création d'une image Docker -> docker build -t <nom-image>:<version> .
+4. Supprimer des images Docker -> docker rmi application-un-img:latest application-un-img:v2
+5. Push d'une image vers Docker Hub -> docker push inesblain/application-un-img:latest
+6. Pull et Exécution d'un container -> docker run -p 8090:8080 inesblain/application-un-img:latest
+Note : Le port 8090 est le port sur lequel on accède à l'application depuis le localhost
+le port 8080 est le port exposé dans le container*
+7.lister tous les containers en cours d'exécution -> docker ps
+8. Arrêter un container Docker -> docker kill <ID_CONTAINER>
+9. Pull mongo db from docker hub -> docker pull mongo:latest
+10. Run mongo dans un container en mode detache -> docker run -d -p 28000:27017 --name mongodb-container-un mongo:latest
+-d executer en mode detaché
+-p exposer un portdocker images
+11. Construire une image -> docker build -t springboot-avec-mongodb:v1 .
+12. Tagger image pour faire un push sur le docker hub ->
+docker tag springboot-avec-mongodb:v1 inesblain/springboot-avec-mongodb:v1
+13. Push image vers le docker hub -> docker push inesblain/springboot-avec-mongodb:v1
+14. Execution du container SpringBoot avec lien vers le container de mongo db ->docker run -p 8090:8081 --name springboot-avec-mongodb-container-un --link mongodb-container-un:mongo -d inesblain/springboot-avec-mongodb:v1
+15. Voir les logs à "l'intérieur" du container SpringBoot -> docker logs <Nom-Du-Container-En-Cours-Exécution>
+16. Aller à l'intérieur d'un container -> docker exec -it <Nom-Du-Container-En-Cours-Exécution> bash
+17. Forcer l'arrêt et la suppression d'un container en cours d'exécution -> docker rm -f <Nom-Du-Container-En-Cours-Exécution>
+18. Docker compose nous permer de faire fonctionner une application multi-container très simplement avec une simple commande
+

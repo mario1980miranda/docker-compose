@@ -1,0 +1,14 @@
+version: "1"
+services:
+  mongodb-container-un:
+    image: mongo
+    container_name: mongodb-container-un
+    ports:
+      - 28000:27017
+  springboot-avec-mongodb-container-un:
+    image: mariochan15/springboot-avec-mongodb:v1
+    container_name: springboot-avec-mongodb-container-un
+    ports:
+      - 8090:8081
+    links:
+     - mongodb-container-un
